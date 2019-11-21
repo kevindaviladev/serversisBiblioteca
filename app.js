@@ -21,6 +21,7 @@ const motivoRoutes = require('./api/routes/motivo');
 const sedeRoutes = require('./api/routes/sede')
 const informeRoutes = require('./api/routes/informe');
 const rubroRoutes = require('./api/routes/rubro');
+
 var alumnoRoutes = require('./api/routes/alumno');
 var materialRoutes = require('./api/routes/material');
 

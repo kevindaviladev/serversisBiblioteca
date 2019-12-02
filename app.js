@@ -15,16 +15,18 @@ module.exports = app;
 const router = express.Router();
 
 //RUTAS 
-const usuarioRoutes = require('./api/routes/usuario');
-const anticipoRoutes = require('./api/routes/anticipo');
-const motivoRoutes = require('./api/routes/motivo');
-const sedeRoutes = require('./api/routes/sede')
-const informeRoutes = require('./api/routes/informe');
-const rubroRoutes = require('./api/routes/rubro');
-
-var alumnoRoutes = require('./api/routes/alumno');
-var materialRoutes = require('./api/routes/material');
+let alumnoRoutes = require('./api/routes/alumno');
+let materialRoutes = require('./api/routes/material');
+let ejemplarRoutes = require('./api/routes/ejemplar');
+let reservaRoutes = require('./api/routes/reserva');
+let prestamoRoutes = require('./api/routes/prestamo');
+let multaRoutes = require('./api/routes/multa');
+let bibliotecarioRoutes = require('./api/routes/bibliotecario');
 
 app.use('/material',materialRoutes);
 app.use('/alumno',alumnoRoutes);
-
+app.use('/ejemplar',ejemplarRoutes);
+app.use('/reserva',reservaRoutes);
+app.use('/prestamo',prestamoRoutes);
+app.use('/multa',multaRoutes);
+app.use('/bibliotecario',bibliotecarioRoutes);

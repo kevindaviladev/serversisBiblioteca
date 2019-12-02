@@ -35,6 +35,27 @@ router.get('/listarUsuario/:dni', (req, res, next) => {
     });
 });
 
+router.post('/login/', (req, res, next) => {
+    
+  var results;
+  var rpta;
+
+  const usuario = req.body.usuario;
+  const clave = req.body.clave;
+
+//  console.log(usuario+' '+clave);
+
+  connection.query("select * from alumno where dni='"+usuario+"' and clave=md5('"+clave+"')", function (err, rows, fields) {
+    if (err) throw err;
+    result = rows;
+    return res.status(201).json({
+        recordSet: {
+            element: result,
+        },
+    });
+  });
+});
+
 
 
 

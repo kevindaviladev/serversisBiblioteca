@@ -22,7 +22,7 @@ router.get('/listarReservaAlumno/:idAlumno', (req, res, next) => {
     var results = [];
     var idAlumno = req.params.idAlumno;
 
-    connection.query("select m.portada, t.nombre as tipo, m.titulo, e.idEjemplar, DATE_FORMAT(r.fecha,'%Y-%m-%d') as fecha, r.estado from reserva r inner join ejemplar e on r.idEjemplar=e.idEjemplar inner join material m on e.idMaterial=m.idMaterial inner join material_tipo t on m.idMaterial_tipo=t.idMaterial_tipo where r.idAlumno='"+idAlumno+"'", function (err, rows, fields) {
+    connection.query("select m.portada, t.nombre as tipo, m.titulo, e.idEjemplar, DATE_FORMAT(r.fecha,'%Y-%m-%d') as fecha, r.estado from reserva r inner join ejemplar e on r.idEjemplar=e.idEjemplar inner join material m on e.idMaterial=m.idMaterial inner join material_tipo t on m.idMaterial_tipo=t.idMaterial_tipo where r.idAlumno='"+idAlumno+"' and r.estado='D'", function (err, rows, fields) {
       // connection.query("select * from material where idMaterial='"+filtro+"' ", function (err, rows, fields) {
       if (err) console.log(err);
       result = rows;
